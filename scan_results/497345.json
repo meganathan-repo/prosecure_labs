@@ -1,0 +1,65 @@
+{
+    "http_headers": {
+        "Date": "Thu, 03 Apr 2025 08:59:40 GMT",
+        "Expires": "-1",
+        "Cache-Control": "private, max-age=0",
+        "Content-Type": "text/html; charset=ISO-8859-1",
+        "Content-Security-Policy-Report-Only": "object-src 'none';base-uri 'self';script-src 'nonce-zLrCriTPibkTMfxCPCPfaA' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp",
+        "P3P": "CP=\"This is not a P3P policy! See g.co/p3phelp for more info.\"",
+        "Content-Encoding": "gzip",
+        "Server": "gws",
+        "Content-Length": "7759",
+        "X-XSS-Protection": "0",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Set-Cookie": "AEC=AVcja2euJjHjpJyz94qYJAfMRJPsFYZ6Ixx0Mfga-ZI5yd4lUjIDfC6brFk; expires=Tue, 30-Sep-2025 08:59:40 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=lax, NID=523=o8JlOvfd-Pp_-YlbYVY8BAohz_DdVYRW_8fk84xauX_0oAb4hnFixcllH3qaIUxudlcywT-VD2bF2SWKljypfPzv2GS5FBQ_Z2T2TSHsOZKYlRiSEDDgNeyhBEaZAXQOOXAESpoq_rqO4tnX6Pn-3xhEP9V5rpG_INreLqwCd8kkm_nLRuR011XUMCN7BSYle29DHYgTRAQc-909As4; expires=Fri, 03-Oct-2025 08:59:40 GMT; path=/; domain=.google.com; HttpOnly"
+    },
+    "open_ports": [
+        "Scan timed out!",
+        "890"
+    ],
+    "vulnerable_ports": [
+        "Scan timed out!",
+        "890"
+    ],
+    "missing_headers": [
+        "Strict-Transport-Security",
+        "X-Content-Type-Options",
+        "Referrer-Policy",
+        "Content-Security-Policy",
+        "Permissions-Policy",
+        "Pragma",
+        "Access-Control-Allow-Origin",
+        "Access-Control-Allow-Methods",
+        "Access-Control-Allow-Headers",
+        "Feature-Policy",
+        "Expect-CT",
+        "Public-Key-Pins",
+        "NEL",
+        "Server-Timing",
+        "Cross-Origin-Resource-Policy",
+        "Cross-Origin-Embedder-Policy"
+    ],
+    "technology_info": {
+        "error": "Expecting ',' delimiter: line 3 column 1 (char 485)"
+    },
+    "updated_tech_info": [
+        {
+            "techinfo": "Unknown, Unknown"
+        }
+    ],
+    "vulnerable_tech_info": [
+        {
+            "techinfoVulnerability": {}
+        }
+    ],
+    "xss_vuln_data": [],
+    "open_redirect_vulnerabilities": [],
+    "Directory_enumration_vulnerabilities": null,
+    "clickjacking_vulnerability": {
+        "domain": "google.com",
+        "x_frame_options": "sameorigin",
+        "content_security_policy": "Not Set",
+        "vulnerable": false,
+        "message": "Protected (X-Frame-Options is set correctly)"
+    }
+}

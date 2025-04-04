@@ -1,0 +1,42 @@
+{
+    "http_headers": {
+        "Date": "Thu, 03 Apr 2025 09:32:43 GMT",
+        "Expires": "-1",
+        "Cache-Control": "private, max-age=0",
+        "Content-Type": "text/html; charset=ISO-8859-1",
+        "Content-Security-Policy-Report-Only": "object-src 'none';base-uri 'self';script-src 'nonce-Pl0CdjlYcTg5C6ErPyX_mw' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp",
+        "P3P": "CP=\"This is not a P3P policy! See g.co/p3phelp for more info.\"",
+        "Content-Encoding": "gzip",
+        "Server": "gws",
+        "Content-Length": "7683",
+        "X-XSS-Protection": "0",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Set-Cookie": "AEC=AVcja2dWoyqvWvaTwWTw5h3QU6rKEXggnLjFyaLXdbyd0iXeShdP_Dmt3Q; expires=Tue, 30-Sep-2025 09:32:43 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=lax, NID=523=ehINYXN_8JW2YJGGwFnvgI2Cu8Mxnm1SYi5szHwWwOFdp2LamcbnmPeavAXXtMNlwpMO0iDaOlJgUpDm0wAUiI2BSEF4mBuLKmXZEyCrzoorcSX0zyA3glmlrHR7OCusWXr2LPeoJXmbCnomrSDIZggE8yR60lF2vZlbgq2hdBeprOZ74tr_Yq5PIgx3JpJZMCSJ1bgaUWMYSduEcA; expires=Fri, 03-Oct-2025 09:32:43 GMT; path=/; domain=.google.com; HttpOnly"
+    },
+    "open_ports": [
+        "Scan timed out!",
+        "890"
+    ],
+    "vulnerable_ports": [
+        "Scan timed out!",
+        "890"
+    ],
+    "missing_headers": [
+        "Strict-Transport-Security",
+        "X-Content-Type-Options",
+        "Referrer-Policy",
+        "Content-Security-Policy",
+        "Permissions-Policy",
+        "Pragma",
+        "Access-Control-Allow-Origin",
+        "Access-Control-Allow-Methods",
+        "Access-Control-Allow-Headers",
+        "Feature-Policy",
+        "Expect-CT",
+        "Public-Key-Pins",
+        "NEL",
+        "Server-Timing",
+        "Cross-Origin-Resource-Policy",
+        "Cross-Origin-Embedder-Policy"
+    ]
+}

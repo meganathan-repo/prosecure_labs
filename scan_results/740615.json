@@ -1,0 +1,50 @@
+{
+    "http_headers": {
+        "Date": "Wed, 02 Apr 2025 06:47:57 GMT",
+        "Expires": "-1",
+        "Cache-Control": "private, max-age=0",
+        "Content-Type": "text/html; charset=ISO-8859-1",
+        "Content-Security-Policy-Report-Only": "object-src 'none';base-uri 'self';script-src 'nonce-Acz-tYJW-jt0ULpYbnYD-Q' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp",
+        "P3P": "CP=\"This is not a P3P policy! See g.co/p3phelp for more info.\"",
+        "Content-Encoding": "gzip",
+        "Server": "gws",
+        "Content-Length": "7639",
+        "X-XSS-Protection": "0",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Set-Cookie": "AEC=AVcja2eB-lGFaUF0O9mM1uA6dgMW_djqL6fWpUTmE9S8HfecP39nGJwClQM; expires=Mon, 29-Sep-2025 06:47:57 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=lax, NID=522=pZTFLFwRUsZBXil9slnB0pX148QYKAiHJIKDhjPnaGHyqCgrAy0iqt79paCI78jEAl7R2biIILVXbqwfIqnTvj6Wwf6bc1jpEHBwN-CS9p81OnaXV_25cMul9Q9dGJLHA1kPD5ezct0ZUySS0NMVvImLRYv0DaiG4Ah-8K5QgH3IaLPARMoTuGhqkeujwTerKvC9MauzzATeUTPyeQ; expires=Thu, 02-Oct-2025 06:47:57 GMT; path=/; domain=.google.com; HttpOnly"
+    },
+    "open_ports": [
+        "80",
+        "443",
+        "890"
+    ],
+    "vulnerable_ports": [
+        "890"
+    ],
+    "missing_headers": [
+        "Strict-Transport-Security",
+        "X-Content-Type-Options",
+        "Referrer-Policy",
+        "Content-Security-Policy",
+        "Permissions-Policy",
+        "Pragma",
+        "Access-Control-Allow-Origin",
+        "Access-Control-Allow-Methods",
+        "Access-Control-Allow-Headers",
+        "Feature-Policy",
+        "Expect-CT",
+        "Public-Key-Pins",
+        "NEL",
+        "Server-Timing",
+        "Cross-Origin-Resource-Policy",
+        "Cross-Origin-Embedder-Policy"
+    ],
+    "updated_tech_info": [
+        {
+            "techinfo": "Unknown, gws"
+        },
+        {}
+    ],
+    "xss_vuln_data": [],
+    "open_redirect_vulnerabilities": []
+}

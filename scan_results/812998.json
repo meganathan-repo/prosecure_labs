@@ -1,0 +1,97 @@
+{
+    "http_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Date": "Tue, 01 Apr 2025 10:45:05 GMT",
+        "X-Powered-By": "Next.js",
+        "Content-Encoding": "gzip",
+        "ETag": "\"14a48-XCBhIKr04mWfSWsslCnLlnNdm3o\"",
+        "Vary": "Accept-Encoding",
+        "X-Cache": "Hit from cloudfront",
+        "Via": "1.1 1dd6f08fb93545a8d6cac36f521d0678.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Pop": "BOM78-P3",
+        "X-Amz-Cf-Id": "fPZ67EAuMVmv80_P9PEcpiMB6oDyTA6B8kdwrkwh3P-Q_Y8AnY6BHA==",
+        "Age": "118",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "X-Content-Type-Options": "nosniff",
+        "Strict-Transport-Security": "max-age=31536000"
+    },
+    "open_ports": [
+        "80",
+        "443",
+        "890"
+    ],
+    "vulnerable_ports": [
+        "890"
+    ],
+    "missing_headers": [
+        "Content-Security-Policy",
+        "Permissions-Policy",
+        "Cache-Control",
+        "Pragma",
+        "Expires",
+        "Access-Control-Allow-Origin",
+        "Access-Control-Allow-Methods",
+        "Access-Control-Allow-Headers",
+        "Feature-Policy",
+        "Expect-CT",
+        "Public-Key-Pins",
+        "NEL",
+        "Server-Timing",
+        "Cross-Origin-Resource-Policy",
+        "Cross-Origin-Embedder-Policy"
+    ],
+    "updated_tech_info": [
+        {
+            "techinfo": "Unknown, unknown"
+        },
+        {}
+    ],
+    "xss_vuln_data": [],
+    "open_redirect_vulnerabilities": [
+        {
+            "payload": "https://google.com/",
+            "redirected_to": "https://www.google.com/sorry/index?continue=https://google.com/&q=EgRnglvhGKyIr78GIimz78X-vNTAY7NhoHktsT2dQnGbxNctSU7TRuyb1oWY3KpD6Md9bu9IkjICclJaAUM"
+        },
+        {
+            "payload": "https://www.whitelisteddomain.tld@google.com/",
+            "redirected_to": "https://www.google.com/sorry/index?continue=https://google.com/&q=EgRnglvhGK2Ir78GIik71d-W9FSG_14GHIyf_UQ6L6pqBjhh1XDkwGqqTt9-KkKk0XMuSw45mjICclJaAUM"
+        },
+        {
+            "payload": "https://google.com//",
+            "redirected_to": "https://www.google.com/sorry/index?continue=https://google.com/&q=EgRnglvhGK6Ir78GIilRjY9lyFX6lXzgl0lGBbbxSLCCWOn4QoQ6btoIA_vCRkJCPnDMdkqSCjICclJaAUM"
+        },
+        {
+            "payload": "https://www.whitelisteddomain.tld@google.com//",
+            "redirected_to": "https://www.google.com/sorry/index?continue=https://google.com/&q=EgRnglvhGK-Ir78GIildcHjB_4SXMcRmQlAyAfD2fmIfr1goSNVSG_LLS7_4drJCrwK-wxEi4jICclJaAUM"
+        },
+        {
+            "payload": "https://%5cwww.whitelisteddomain.tld@google.com",
+            "redirected_to": "https://www.google.com/sorry/index?continue=https://google.com/&q=EgRnglvhGLGIr78GIinCrhUNwF6jSkqAn0vrmYEc4v8gd6j-OFM4tVNPEl_jNfkL8uYJ7dBKcjICclJaAUM"
+        },
+        {
+            "payload": "https://google.com",
+            "redirected_to": "https://www.google.com/sorry/index?continue=https://google.com/&q=EgRnglvhGLOIr78GIinJj9ohXi2WZSgKJXI1OY7b2e8nc3LW41w_TY6Fl23GcmOfCXq3LmpQ_zICclJaAUM"
+        },
+        {
+            "payload": "https://www.whitelisteddomain.tld@google.com",
+            "redirected_to": "https://www.google.com/sorry/index?continue=https://google.com/&q=EgRnglvhGLSIr78GIinVZ_g2m3rKIRuOVKrEDEWgQFBUaSSOUXqT_bgkc5ybTo35jvAIFccjjzICclJaAUM"
+        },
+        {
+            "payload": "http://%67%6f%6f%67%6c%65%2e%63%6f%6d",
+            "redirected_to": "http://www.google.com/sorry/index?continue=http://google.com/&q=EgRnglvhGO-Jr78GIil1yFtb4o-4UCV10aVCy5pZ0skGiHM-sfYrPDZGuVZ9-K-GCz71QD7nOzICclJaAUM"
+        },
+        {
+            "payload": "http://google.com:80#@www.whitelisteddomain.tld/",
+            "redirected_to": "http://www.google.com/sorry/index?continue=http://google.com/&q=EgRnglvhGPCJr78GIin23gMrj1a85cj1ivbctSKtdcreRgwHxFCscVgF-PeO1ksGJdTWRVD5ejICclJaAUM#@www.whitelisteddomain.tld/"
+        },
+        {
+            "payload": "http://google.com:80?@www.whitelisteddomain.tld/",
+            "redirected_to": "http://www.google.com/sorry/index?continue=http://google.com/%3F%40www.whitelisteddomain.tld/&q=EgRnglvhGPCJr78GIil0GsjuD0aD4rnCyQJmCXWPSbfXMiUihYDESSdoqdtkv12GXTaW83ORcDICclJaAUM"
+        }
+    ],
+    "Directory_enumration_vulnerabilities": null
+}

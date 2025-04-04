@@ -1,0 +1,22 @@
+{
+    "http_headers": {
+        "Content-Type": "text/html; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Date": "Tue, 01 Apr 2025 08:33:29 GMT",
+        "X-Powered-By": "Next.js",
+        "Content-Encoding": "gzip",
+        "ETag": "\"14a48-XCBhIKr04mWfSWsslCnLlnNdm3o\"",
+        "Vary": "Accept-Encoding",
+        "X-Cache": "Hit from cloudfront",
+        "Via": "1.1 450c7de382a90d91aaef3998b5bbf7ec.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Pop": "BOM78-P3",
+        "X-Amz-Cf-Id": "pyvff19MeKUtKtQpIURiSrw8PU5acaNzmmZ-nh_49e3FL5pK4JHFNQ==",
+        "Age": "173",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Referrer-Policy": "strict-origin-when-cross-origin",
+        "X-Content-Type-Options": "nosniff",
+        "Strict-Transport-Security": "max-age=31536000"
+    }
+}

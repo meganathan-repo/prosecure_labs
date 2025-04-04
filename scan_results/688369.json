@@ -1,0 +1,20 @@
+{
+    "http_headers": {},
+    "open_ports": [
+        "890"
+    ],
+    "vulnerable_ports": [
+        "890"
+    ],
+    "missing_headers": [],
+    "updated_tech_info": [
+        {
+            "techinfo": "Error, Error"
+        },
+        {
+            "techinfoVulnerability": {}
+        }
+    ],
+    "xss_vuln_data": [],
+    "open_redirect_vulnerabilities": []
+}

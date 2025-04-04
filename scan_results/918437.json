@@ -1,0 +1,23 @@
+{
+    "http_headers": {
+        "Error": "Could not retrieve headers"
+    },
+    "open_ports": [
+        "890"
+    ],
+    "vulnerable_ports": [
+        "890"
+    ],
+    "missing_headers": [
+        "Error: Could not retrieve headers"
+    ],
+    "updated_tech_info": [
+        {
+            "techinfo": "Error, Error"
+        },
+        {}
+    ],
+    "xss_vuln_data": [],
+    "open_redirect_vulnerabilities": [],
+    "Directory_enumration_vulnerabilities": null
+}

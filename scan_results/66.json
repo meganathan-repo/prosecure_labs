@@ -1,0 +1,92 @@
+{
+    "http_headers": {
+        "Date": "Mon, 31 Mar 2025 08:22:17 GMT",
+        "Expires": "-1",
+        "Cache-Control": "private, max-age=0",
+        "Content-Type": "text/html; charset=ISO-8859-1",
+        "Content-Security-Policy-Report-Only": "object-src 'none';base-uri 'self';script-src 'nonce-IoIZQc-GH4I-aNrxGD2Nxg' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp",
+        "P3P": "CP=\"This is not a P3P policy! See g.co/p3phelp for more info.\"",
+        "Content-Encoding": "gzip",
+        "Server": "gws",
+        "Content-Length": "7575",
+        "X-XSS-Protection": "0",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Set-Cookie": "AEC=AVcja2ceUHVhNeWAZySCQ-BRM1mbdFq9ZTpXemHm_w6JUkf-x4qyExANzA; expires=Sat, 27-Sep-2025 08:22:17 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=lax, NID=522=UqLUj92xQ4b21L1cu6P7JIEtKqkTIY4M8xuYl91PFhNe31xuoSW8-EpwSvCeS7rnJltfvQDFvr-pnk7KuMrXNhX4NwMOIFSrlUlLzGcJMgffqr0DB_cFZS3oiOWwkMVTFPMPxiMoYURnhQ7Dqe5vatpCh8eABr0FlOYNnRA_egkm8U3CeWxHluvxcE4pQ4N0EpqfWKKhdjxYMkY8ikQ; expires=Tue, 30-Sep-2025 08:22:17 GMT; path=/; domain=.google.com; HttpOnly"
+    },
+    "vulnerable_ports": [
+        "890"
+    ],
+    "missing_headers": [
+        "Strict-Transport-Security",
+        "X-Content-Type-Options",
+        "Referrer-Policy",
+        "Content-Security-Policy",
+        "Permissions-Policy",
+        "Pragma",
+        "Access-Control-Allow-Origin",
+        "Access-Control-Allow-Methods",
+        "Access-Control-Allow-Headers",
+        "Feature-Policy",
+        "Expect-CT",
+        "Public-Key-Pins",
+        "NEL",
+        "Server-Timing",
+        "Cross-Origin-Resource-Policy",
+        "Cross-Origin-Embedder-Policy"
+    ],
+    "updated_tech_info": [
+        {
+            "techinfo": "Unknown, gws"
+        },
+        {}
+    ],
+    "xss_vuln_data": [],
+    "open_redirect_vulnerabilities": [
+        {
+            "payload": "https://google.com/",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "https://www.whitelisteddomain.tld@google.com/",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "https://google.com//",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "https://www.whitelisteddomain.tld@google.com//",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "https://%5cwww.whitelisteddomain.tld@google.com",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "https://google.com",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "https://www.whitelisteddomain.tld@google.com",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "http://%67%6f%6f%67%6c%65%2e%63%6f%6d",
+            "redirected_to": "http://www.google.com/"
+        },
+        {
+            "payload": "http://google.com:80#@www.whitelisteddomain.tld/",
+            "redirected_to": "http://www.google.com/#@www.whitelisteddomain.tld/"
+        },
+        {
+            "payload": "http://google.com:80?@www.whitelisteddomain.tld/",
+            "redirected_to": "http://www.google.com/?@www.whitelisteddomain.tld/="
+        }
+    ],
+    "os_command_injection_vulnerabilities": [
+        {
+            "payload": "; cat /etc/passwd",
+            "response": "root:x:0:0:root:/root:/bin/bash"
+        }
+    ]
+}

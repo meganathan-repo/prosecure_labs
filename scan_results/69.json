@@ -1,0 +1,92 @@
+{
+    "http_headers": {
+        "Date": "Tue, 01 Apr 2025 06:47:45 GMT",
+        "Expires": "-1",
+        "Cache-Control": "private, max-age=0",
+        "Content-Type": "text/html; charset=ISO-8859-1",
+        "Content-Security-Policy-Report-Only": "object-src 'none';base-uri 'self';script-src 'nonce-sIjZ0yujHfb0nbFQnQn1PA' 'strict-dynamic' 'report-sample' 'unsafe-eval' 'unsafe-inline' https: http:;report-uri https://csp.withgoogle.com/csp/gws/other-hp",
+        "P3P": "CP=\"This is not a P3P policy! See g.co/p3phelp for more info.\"",
+        "Content-Encoding": "gzip",
+        "Server": "gws",
+        "Content-Length": "7604",
+        "X-XSS-Protection": "0",
+        "X-Frame-Options": "SAMEORIGIN",
+        "Set-Cookie": "AEC=AVcja2ejA8YfiioKIua5yCWAn7_DVWalnXig4-eVxMWDS2X9yKXPg4sQMQ; expires=Sun, 28-Sep-2025 06:47:46 GMT; path=/; domain=.google.com; Secure; HttpOnly; SameSite=lax, NID=522=Csa4FAy5AqGdtu8TwKPBW1AwGflEsSyr2ZD1_U5vqy0JSlKckmT_M5qQJ8UPL0fjpgZtC5oggmP1GTNeLLDGzGo086ECqSEwgX0Rz5hLpm0xxOUOf56KwTYr5BfpJQl-urknFdqu3u1ou4UMcNH9hA-6S1gevDhISOyiGzSi46yRwL3ojKxW14Ge6SDTWMPQPMR2LIwfkltdLEHnGQ; expires=Wed, 01-Oct-2025 06:47:45 GMT; path=/; domain=.google.com; HttpOnly"
+    },
+    "open_ports": [
+        "80",
+        "443",
+        "890"
+    ],
+    "vulnerable_ports": [
+        "890"
+    ],
+    "missing_headers": [
+        "Strict-Transport-Security",
+        "X-Content-Type-Options",
+        "Referrer-Policy",
+        "Content-Security-Policy",
+        "Permissions-Policy",
+        "Pragma",
+        "Access-Control-Allow-Origin",
+        "Access-Control-Allow-Methods",
+        "Access-Control-Allow-Headers",
+        "Feature-Policy",
+        "Expect-CT",
+        "Public-Key-Pins",
+        "NEL",
+        "Server-Timing",
+        "Cross-Origin-Resource-Policy",
+        "Cross-Origin-Embedder-Policy"
+    ],
+    "updated_tech_info": [
+        {
+            "techinfo": "Unknown, gws"
+        },
+        {}
+    ],
+    "xss_vuln_data": [],
+    "open_redirect_vulnerabilities": [
+        {
+            "payload": "https://google.com/",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "https://www.whitelisteddomain.tld@google.com/",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "https://google.com//",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "https://www.whitelisteddomain.tld@google.com//",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "https://%5cwww.whitelisteddomain.tld@google.com",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "https://google.com",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "https://www.whitelisteddomain.tld@google.com",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "http://%67%6f%6f%67%6c%65%2e%63%6f%6d",
+            "redirected_to": "http://www.google.com/"
+        },
+        {
+            "payload": "http://google.com:80#@www.whitelisteddomain.tld/",
+            "redirected_to": "http://www.google.com/#@www.whitelisteddomain.tld/"
+        },
+        {
+            "payload": "http://google.com:80?@www.whitelisteddomain.tld/",
+            "redirected_to": "http://www.google.com/?@www.whitelisteddomain.tld/="
+        }
+    ],
+    "Directory_enumration_vulnerabilities": null
+}

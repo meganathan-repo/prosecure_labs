@@ -1,0 +1,55 @@
+{
+    "http_headers": {
+        "Error": "Could not retrieve headers"
+    },
+    "open_ports": [
+        "890"
+    ],
+    "vulnerable_ports": [
+        "890"
+    ],
+    "missing_headers": [
+        "Error: Could not retrieve headers"
+    ],
+    "updated_tech_info": [
+        {
+            "techinfo": "Error, Error"
+        },
+        {}
+    ],
+    "xss_vuln_data": [],
+    "open_redirect_vulnerabilities": [
+        {
+            "payload": "https://google.com/",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "https://www.whitelisteddomain.tld@google.com/",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "https://google.com//",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "https://www.whitelisteddomain.tld@google.com//",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "https://%5cwww.whitelisteddomain.tld@google.com",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "https://google.com",
+            "redirected_to": "https://www.google.com/"
+        },
+        {
+            "payload": "http://google.com:80#@www.whitelisteddomain.tld/",
+            "redirected_to": "http://www.google.com/#@www.whitelisteddomain.tld/"
+        },
+        {
+            "payload": "http://google.com:80?@www.whitelisteddomain.tld/",
+            "redirected_to": "http://www.google.com/?@www.whitelisteddomain.tld/="
+        }
+    ]
+}

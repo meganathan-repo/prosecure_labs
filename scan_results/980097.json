@@ -1,0 +1,45 @@
+{
+    "http_headers": {
+        "Date": "Tue, 01 Apr 2025 10:43:27 GMT",
+        "Pragma": "no-cache",
+        "Expires": "Fri, 01 Jan 1990 00:00:00 GMT",
+        "Cache-Control": "no-store, no-cache, must-revalidate",
+        "Content-Type": "text/html",
+        "Server": "HTTP server (unknown)",
+        "Content-Length": "3077",
+        "X-XSS-Protection": "0"
+    },
+    "open_ports": [
+        "80",
+        "443",
+        "890"
+    ],
+    "vulnerable_ports": [
+        "890"
+    ],
+    "missing_headers": [
+        "Strict-Transport-Security",
+        "X-Frame-Options",
+        "X-Content-Type-Options",
+        "Referrer-Policy",
+        "Content-Security-Policy",
+        "Permissions-Policy",
+        "Access-Control-Allow-Origin",
+        "Access-Control-Allow-Methods",
+        "Access-Control-Allow-Headers",
+        "Feature-Policy",
+        "Expect-CT",
+        "Public-Key-Pins",
+        "NEL",
+        "Server-Timing",
+        "Cross-Origin-Resource-Policy",
+        "Cross-Origin-Embedder-Policy"
+    ],
+    "updated_tech_info": [
+        {
+            "techinfo": "Unknown, http server (unknown)"
+        },
+        {}
+    ],
+    "xss_vuln_data": []
+}

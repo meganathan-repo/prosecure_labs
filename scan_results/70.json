@@ -1,0 +1,64 @@
+{
+    "http_headers": {
+        "Error": "Could not retrieve headers"
+    },
+    "open_ports": [
+        "890"
+    ],
+    "vulnerable_ports": [
+        "890"
+    ],
+    "missing_headers": [
+        "Error: Could not retrieve headers"
+    ],
+    "updated_tech_info": [
+        {
+            "techinfo": "Error, Error"
+        },
+        {}
+    ],
+    "xss_vuln_data": [],
+    "open_redirect_vulnerabilities": [
+        {
+            "payload": "https://google.com/",
+            "redirected_to": "https://www.google.com/sorry/index?continue=https://google.com/&q=EgRnglvhGNizrr8GIikikKKNZuBoV-El9vfZJj2TiW34BLdGvOIoBuEfFFoSSJM5ocj3jghOqTICclJaAUM"
+        },
+        {
+            "payload": "https://www.whitelisteddomain.tld@google.com/",
+            "redirected_to": "https://www.google.com/sorry/index?continue=https://google.com/&q=EgRnglvhGNmzrr8GIilROO7VH6tt6QV_HKToEhAlRryZ5ZltB8Dw28QB2_Nj5Cds0SiR8mmmjTICclJaAUM"
+        },
+        {
+            "payload": "https://google.com//",
+            "redirected_to": "https://www.google.com/sorry/index?continue=https://google.com/&q=EgRnglvhGNqzrr8GIimw4Rpi6ktHprEakWuUDxSbbGEhBQuejvJVBz-oVaR6ycfls2HlUdaZyDICclJaAUM"
+        },
+        {
+            "payload": "https://www.whitelisteddomain.tld@google.com//",
+            "redirected_to": "https://www.google.com/sorry/index?continue=https://google.com/&q=EgRnglvhGNuzrr8GIilYUuJGc6AsiA8ZVAmeZCffU63N1EN0u1tNI4ARlVtLAUN3A6J_tPGLfzICclJaAUM"
+        },
+        {
+            "payload": "https://%5cwww.whitelisteddomain.tld@google.com",
+            "redirected_to": "https://www.google.com/sorry/index?continue=https://google.com/&q=EgRnglvhGNyzrr8GIimPgEXJNAE5C3kM0hwZaLs2edla10gkzsZyZce8CtVZLyeSseqtdRpo-jICclJaAUM"
+        },
+        {
+            "payload": "https://google.com",
+            "redirected_to": "https://www.google.com/sorry/index?continue=https://google.com/&q=EgRnglvhGN2zrr8GIikaM7v5klswExv8ZD0Hpbsa6U7yzUld8cFV0sABc2b2zSHGY6RUfN3I-zICclJaAUM"
+        },
+        {
+            "payload": "https://www.whitelisteddomain.tld@google.com",
+            "redirected_to": "https://www.google.com/sorry/index?continue=https://google.com/&q=EgRnglvhGN6zrr8GIim4ctGf7Fs-S1CdUy7tG6JTfFdidM8K23JWNh6DeraC0IK6BQ8b-UN3SzICclJaAUM"
+        },
+        {
+            "payload": "http://%67%6f%6f%67%6c%65%2e%63%6f%6d",
+            "redirected_to": "http://www.google.com/sorry/index?continue=http://google.com/&q=EgRnglvhGJy1rr8GIil3tRP-cez4IASQ0fws75zuJs3P5cupC-IVvscqztnCWfdS7I-mWG4PuTICclJaAUM"
+        },
+        {
+            "payload": "http://google.com:80#@www.whitelisteddomain.tld/",
+            "redirected_to": "http://www.google.com/sorry/index?continue=http://google.com/&q=EgRnglvhGJy1rr8GIil3tRP-cez4IASQ0fws75zuJs3P5cupC-IVvscqztnCWfdS7I-mWG4PuTICclJaAUM#@www.whitelisteddomain.tld/"
+        },
+        {
+            "payload": "http://google.com:80?@www.whitelisteddomain.tld/",
+            "redirected_to": "http://www.google.com/sorry/index?continue=http://google.com/%3F%40www.whitelisteddomain.tld/&q=EgRnglvhGJ21rr8GIinCtmPYstCon3eeY5DJWNSaxTSwLuWav08Ho7cJjD_-FDrpUbCpoARA5TICclJaAUM"
+        }
+    ],
+    "Directory_enumration_vulnerabilities": null
+}
