@@ -16,12 +16,13 @@ import os
 from datetime import datetime
 import socket
 import requests
+import whois
+# from yourmodule import save_scan_result  
+
 
 
 '''
 from sqlalchemy import create_engine;
-
-
 from typing import List
 from typing import Optional
 # from sqlalchemy import ForeignKey
@@ -116,18 +117,22 @@ def home():
 
 def is_domain_live(domain):
     """
-    ✅ Checks if a domain is live using curl.
+    ✅ Checks if a domain is live by testing both HTTPS and HTTP.
     ✅ Returns True if reachable, else False.
     """
-    try:
-        result = subprocess.run(
-            ["curl", "-Is", "--connect-timeout", "5", domain],
-            capture_output=True, text=True, timeout=6
-        )
-        if "HTTP/" in result.stdout:  # ✅ Found valid HTTP response
-            return True
-    except subprocess.TimeoutExpired:
-        pass  # Ignore timeout errors
+    for protocol in ["https://", "http://"]:
+        try:
+            result = subprocess.run(
+                ["curl", "-Is", "--connect-timeout", "5", protocol + domain],
+                capture_output=True, text=True, timeout=6
+            )
+            if "HTTP/" in result.stdout:
+                return True
+        except subprocess.TimeoutExpired:
+            continue  # Try the next protocol
+        except Exception as e:
+            print(f"Error checking {protocol}{domain}: {e}")
+            continue
 
     return False  # ❌ Not live
 
@@ -138,51 +143,94 @@ SCAN_RESULTS_DIR = "scan_results"
 if not os.path.exists(SCAN_RESULTS_DIR):
     os.makedirs(SCAN_RESULTS_DIR)
 
+# def save_scan_result(temp_id, scan_data):
+#     """ ✅ Save scan data to a JSON file (creates if not exists) using temp_id """
+#     print(scan_data)
+#     # ✅ Ensure the directory exists
+#     os.makedirs(SCAN_RESULTS_DIR, exist_ok=True)
+
+#     file_path = os.path.join(SCAN_RESULTS_DIR, f"{temp_id}.json")
+
+
+#     try:
+#         # ✅ If the file exists, load existing data
+#         if os.path.exists(file_path):
+#             with open(file_path, "r", encoding="utf-8") as file:
+#                 try:
+#                     existing_data = json.load(file)
+#                 except json.JSONDecodeError:
+#                     print(f"❌ Corrupted JSON file, resetting: {file_path}")
+#                 existing_data = {}  # Reset file if corrupted
+#         else:
+#             existing_data = {}  # ✅ Create new JSON structure
+
+#         # ✅ Correctly append/merge data instead of replacing
+#         for key, value in scan_data.items():
+#             if isinstance(value, dict) and key in existing_data and isinstance(existing_data[key], dict):
+#                 # ✅ Merge dictionaries (combine old + new)
+#                 existing_data[key].update(value)
+#             elif isinstance(value, list):
+#                 # ✅ Append to existing list (create new list if not exists)
+#                 if key in existing_data and isinstance(existing_data[key], list):
+#                     existing_data[key].extend(value)
+#                 else:
+#                     existing_data[key] = value
+#             elif isinstance(value, str) or isinstance(value, bool):
+#                 # ✅ Convert to list if multiple entries are needed
+#                 if key in existing_data:
+#                     if isinstance(existing_data[key], list):
+#                         existing_data[key].append(value)
+#                     else:
+#                         existing_data[key] = [existing_data[key], value]
+#                 else:
+#                     existing_data[key] = value
+#             else:
+#                 # ✅ Directly store non-list/dict values
+#                 existing_data[key] = value
+
+#         # ✅ Update with new scan data
+#         #existing_data.update(scan_data)  
+
+#         # ✅ Write updated JSON file
+#         with open(file_path, "w", encoding="utf-8") as file:
+#             json.dump(existing_data, file, indent=4)
+
+#         # ✅ Print JSON response correctly
+#         print("✅ Scan results (JSON format):")
+#         print(json.dumps(existing_data, indent=4))  # Correct print format
+
+#     except json.JSONDecodeError:
+#         print(f"❌ Error reading JSON file (possibly corrupted): {file_path}")
+#     except Exception as e:
+#         print(f"❌ Error saving scan result for temp_id {temp_id}: {e}")
+
+
+
 def save_scan_result(temp_id, scan_data):
-    """ ✅ Save scan data to a JSON file (creates if not exists) using temp_id """
-    print(scan_data)
-    # ✅ Ensure the directory exists
+    """ :white_tick: Save scan data to a JSON file (creates if not exists) using temp_id """
+    # :white_tick: Ensure the directory exists
     os.makedirs(SCAN_RESULTS_DIR, exist_ok=True)
-
     file_path = os.path.join(SCAN_RESULTS_DIR, f"{temp_id}.json")
-
-
     try:
-        # ✅ If the file exists, load existing data
+        # :white_tick: If the file exists, load existing data
         if os.path.exists(file_path):
             with open(file_path, "r", encoding="utf-8") as file:
-                try:
-                    existing_data = json.load(file)
-                except json.JSONDecodeError:
-                    print(f"❌ Corrupted JSON file, resetting: {file_path}")
-                existing_data = {}  # Reset file if corrupted
+                existing_data = json.load(file)
         else:
-            existing_data = {}  # ✅ Create new JSON structure
-
-        # ✅ Merge new scan data instead of replacing
-        for key, value in scan_data.items():
-            if isinstance(value, dict) and key in existing_data and isinstance(existing_data[key], dict):
-                # ✅ Merge dictionaries (old + new data)
-                existing_data[key].update(value)
-            else:
-                # ✅ Replace old data (if not a dict)
-                existing_data[key] = value      
-
-        # ✅ Update with new scan data
-        #existing_data.update(scan_data)  
-
-        # ✅ Write updated JSON file
+            existing_data = {}  # :white_tick: Create new JSON structure
+        # :white_tick: Update with new scan data
+        existing_data.update(scan_data)
+        # :white_tick: Write updated JSON file
         with open(file_path, "w", encoding="utf-8") as file:
             json.dump(existing_data, file, indent=4)
-
-        # ✅ Print JSON response correctly
-        print("✅ Scan results (JSON format):")
+        # :white_tick: Print JSON response correctly
+        print(" Scan results (JSON format):")
         print(json.dumps(existing_data, indent=4))  # Correct print format
-
     except json.JSONDecodeError:
-        print(f"❌ Error reading JSON file (possibly corrupted): {file_path}")
+        print(f":x: Error reading JSON file (possibly corrupted): {file_path}")
     except Exception as e:
-        print(f"❌ Error saving scan result for temp_id {temp_id}: {e}")
+        print(f":x: Error saving scan result for temp_id {temp_id}: {e}")
+
 
 
 
@@ -223,7 +271,64 @@ def save_scan_result(temp_id, scan_data):
 #     conn.close()
 
 
+def get_whois_info(domain, entry_id, company_id, session):
+    try:
+        result = subprocess.run(["whois", domain], capture_output=True, text=True, timeout=60)
+        whois_output = result.stdout
 
+        # Check if referral WHOIS server is present (e.g., for .com domains)
+        referred_server = None
+        for line in whois_output.splitlines():
+            if "Registrar WHOIS Server:" in line or "Whois Server:" in line:
+                referred_server = line.split(":")[1].strip()
+                break
+
+        # Follow referral if found
+        if referred_server:
+            result = subprocess.run(["whois", "-h", referred_server, domain], capture_output=True, text=True, timeout=60)
+            whois_output = result.stdout
+
+        # Fields you want to extract
+        fields_to_extract = [
+            "Registry Domain ID", "Registrar WHOIS Server", "Registrar URL",
+            "Updated Date", "Creation Date", "Registry Expiry Date", "Registrar",
+            "Registrar IANA ID", "Registrar Abuse Contact Email", "Registrar Abuse Contact Phone",
+            "Domain Status", "Name Server", "DNSSEC"
+        ]
+
+        whois_data = {}
+        for line in whois_output.splitlines():
+            line = line.strip() 
+            for field in fields_to_extract:
+                if line.startswith(field):
+                    key, _, value = line.partition(":")
+                    key = key.strip()
+                    value = value.strip()
+
+                    # Handle multiple domain status or name server entries
+                    if key in whois_data:
+                        if isinstance(whois_data[key], list):
+                            whois_data[key].append(value)
+                        else:
+                            whois_data[key] = [whois_data[key], value]
+                    else:
+                        whois_data[key] = value
+
+        # ✅ Store in DB
+        session.query(Vulnerabilities).filter(Vulnerabilities.company_id == company_id).update(
+            {"info_http_headers": whois_data}
+        )
+        session.commit()
+
+        # ✅ Save in JSON file
+        save_scan_result(entry_id, {"whois_info": whois_data})
+
+        print(f"✅ WHOIS info saved for {domain}")
+
+    except subprocess.TimeoutExpired:
+        print(f"❌ WHOIS command timed out for {domain}")
+    except Exception as e:
+        print(f"❌ WHOIS info failed for {domain}: {e}")
 
 
 def is_nmap_installed():
@@ -239,8 +344,8 @@ def run_nmap_scan(domain):
         # Running Nmap to scan top 200 vulnerability ports within 5 seconds
         result = subprocess.run(
             #["nmap", "-T4", "--top-ports", "200", "--host-timeout", "60s", domain],  
-            ["nmap", "-T4", "--top-ports", "200", "-Pn", "--script", "vuln", domain],
-            capture_output=True, text=True, timeout=120
+            ["nmap", "-T5", "-p-", "--min-rate=1000", "-Pn", "--open", "--script", "vuln", domain],
+            capture_output=True, text=True
         )
         # Extract only open ports using regex
         open_ports = re.findall(r"(\d+)/tcp\s+open", result.stdout)
@@ -539,6 +644,11 @@ def enumerate_directories(domain):
             pass  # Ignore errors
 
 
+        
+    # ✅ Return empty object if nothing found
+    return detected_directories if detected_directories else {}
+
+
 def check_clickjacking(domain):
     """
     Checks if the given domain is vulnerable to Clickjacking.
@@ -568,8 +678,8 @@ def check_clickjacking(domain):
         # Return the scan result
         return {
             "domain": domain,
-            "x_frame_options": x_frame_options if x_frame_options else "Not Set",
-            "content_security_policy": content_security_policy if content_security_policy else "Not Set",
+            "x_frame_options": x_frame_options if x_frame_options else "{}",
+            "content_security_policy": content_security_policy if content_security_policy else "{}",
             "vulnerable": vulnerable,
             "message": vulnerability_reason
         }
@@ -591,7 +701,7 @@ def get_website_technology(domain):
         return {"error": str(e)}
 
 
-def perform_full_scan(domain, entry_id):
+def perform_full_scan(domain, entry_id,):
     """Runs all security scans one by one and stores each result in the database."""
     #session = get_db_session()  # Get DB session
     company_id = session.query(CompanyInfo.id).filter(CompanyInfo.id == entry_id).first();
@@ -600,30 +710,21 @@ def perform_full_scan(domain, entry_id):
 
     print('hi_______->')
     print(company_id)
-
-     # 🔍 Step 1: Check if the domain is live
    
 
     try:
 
+        process = multiprocessing.Process(target=get_whois_info, args=(domain, entry_id, company_id, session))
+        process.start()
+
         scan_results = {}
 
-        http_headers = get_http_headers(domain)
         
-      
-
-        session.query(Vulnerabilities).filter_by(company_id=company_id).update(
-            { "info_http_headers": http_headers}
-        )
-        session.commit()
-        save_scan_result(entry_id, {"http_headers": http_headers})
-        print(f"✅ HTTP Header Analysis completed for {domain}")
-
 
 
         scan_result = run_nmap_scan(domain)
         open_ports = scan_result.split(", ") if scan_result and scan_result != "No open ports found!" else []
-        open_ports.append("890")
+        #open_ports.append("890")
         vulnerable_ports = [port for port in open_ports if port not in ["80", "443"]]
 
         session.query(Vulnerabilities).filter_by(company_id=company_id).update(
@@ -893,6 +994,22 @@ def scan():
             raise Exception(f"Company ID {new_entry.id} not found in the database!")
         
 
+        #session = get_db_session()  # Get DB session
+        company_id = session.query(CompanyInfo.id).filter(CompanyInfo.id == new_temp_id).first();
+        session.commit()
+        
+
+        http_headers = get_http_headers(domain)
+        
+      
+
+        session.query(Vulnerabilities).filter_by(company_id=company_id).update(
+            { "info_http_headers": http_headers}
+        )
+        session.commit()
+        save_scan_result(new_temp_id, {"url": domain})
+        save_scan_result(new_temp_id, {"http_headers": http_headers})
+        print(f"✅ HTTP Header Analysis completed for {domain}")
 
 
         # ✅ Start background scan
